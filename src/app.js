@@ -13,5 +13,10 @@ client.connect(function(sessionId) {
     });
 
     var metrics = { watts: 340, amperes: 1, heurescreuses: 10000000, heurespleines: 50000000 };
-    client.publish(destination, JSON.stringify(metrics));
+
+    function publish() {
+      client.publish(destination, JSON.stringify(metrics));
+      metrics.heurespleines++;
+    }
+    setInterval(publish, 1000);
 });
