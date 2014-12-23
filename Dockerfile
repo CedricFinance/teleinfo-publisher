@@ -1,7 +1,7 @@
 FROM node:latest
 
-ENV ACTIVEMQ_USER user
-ENV ACTIVEMQ_PASSWORD password
+ENV ACTIVEMQ_USER publisher
+ENV ACTIVEMQ_PASSWORD publisher
 
 RUN useradd -m app
 
