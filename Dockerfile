@@ -1,8 +1,5 @@
 FROM node:latest
 
-ENV ACTIVEMQ_USER publisher
-ENV ACTIVEMQ_PASSWORD publisher
-
 RUN useradd -m app
 
 USER app
@@ -12,5 +9,8 @@ ADD package.json /home/app/
 RUN npm install
 
 ADD src /home/app/src
+
+ENV ACTIVEMQ_USER publisher
+ENV ACTIVEMQ_PASSWORD publisher
 
 CMD node src/app.js
