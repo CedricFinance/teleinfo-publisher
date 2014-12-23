@@ -13,10 +13,6 @@ function random(minValue, maxValue) {
 }
 
 client.connect(function(sessionId) {
-    client.subscribe(destination, function(body, headers) {
-      console.log('Message received:', body);
-    });
-
     var metrics = { watts: 340, amperes: 1, heurescreuses: 10000000, heurespleines: 50000000 };
 
     function publish() {
