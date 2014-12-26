@@ -1,3 +1,3 @@
 #!/bin/sh
 
-docker run -it --rm --link teleinfo-activemq:mq teleinfo-publisher
+docker run -it --rm -e DEV=true --link teleinfo-activemq:mq teleinfo-publisher
