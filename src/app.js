@@ -18,7 +18,7 @@ var client = new Stomp('mq', port, user, pass);
 
 client.connect(function(sessionId) {
   trameEvents.on("tramedecodee", function(data) {
-    var metrics = { watts: data.PAPP, amperes: data.IINST, offpeak_hours_index: data.HCHC, peak_hours_index: data.HCHP, pricing_period: data.PTEC };
+    var metrics = { watts: data.PAPP, amperes: data.IINST, offpeak_hours_index: data.HCHC, peak_hours_index: data.HCHP, pricing_period: data.PTEC, date: new Date() };
     client.publish(destination, JSON.stringify(metrics));
   });
 });
